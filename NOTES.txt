@@ -1,0 +1,27 @@
+NEED TO BE INSTALLED:
+=====================
+1. supervisor
+   command "sudo apt-get install supervisor"
+   installed outside virtualenv
+
+2. Gunicorn
+   installed inside virtualenv via PIP
+   command "pip install gunicorn"
+
+3. Nginx web server
+   command "sudo apt-get install nginx"
+
+IMPORTANT:
+** files :
+    - gunicorn_init_script.sh
+    - nginx_server.conf
+    - supervisor_conf_file.conf
+
+can be renamed to anything, but its better to make it understandable.
+
+** gunicorn script should be placed at inside django project.
+
+** If each conf and script file require Username, put current username you are now.(unix username, in my case "/home/ekaputra" -> username "ekaputra" and group "ekaputra"
+
+** gunicorn script should be in executable permission, "chmod +x script.sh"
+
