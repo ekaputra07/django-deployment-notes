@@ -1,9 +1,19 @@
 NEED TO BE INSTALLED:
 =====================
 1. supervisor
-   command "sudo apt-get install supervisor"
    installed outside virtualenv
-
+   command - "sudo apt-get install supervisor"
+           - "echo_supervisord_conf > /etc/supervisord.conf"
+   edit /etc/supervisord.conf and add supervisor conf for project at the end of the file.
+   example:
+        #------------- Start ----------------------------------------------#
+        [program:fantasteak]
+        directory = /home/ekaputra/site/fantasteak/fantasteak
+        user = ekaputra
+        command = /home/ekaputra/site/fantasteak/fantasteak/server.sh
+        stdout_logfile = /home/ekaputra/site/fantasteak/logs/supervisor.log
+        stderr_logfile = /home/ekaputra/site/fantasteak/logs/supervisor.log
+        #------------ end -------------------------------------------------#
 2. Gunicorn
    installed inside virtualenv via PIP
    command "pip install gunicorn"
